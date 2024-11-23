@@ -1,0 +1,240 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Graphic Cards API - CSE341",
+    "description": "Graphic Cards API - Week 3/4 Personal Activity",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Hello world"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/graphics/": {
+      "get": {
+        "tags": [
+          "Graphic Cards"
+        ],
+        "description": "",
+        "produces": [
+          "Application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Graphic Cards"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create a Graphic Card in the Database",
+            "schema": {
+              "$ref": "#/definitions/graphicCards"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/graphics/{id}": {
+      "get": {
+        "tags": [
+          "Graphic Cards"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Graphic Cards"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Create a Graphic Card in the Database",
+            "schema": {
+              "$ref": "#/definitions/graphicCards"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Graphic Cards"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "graphicCards": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": "string",
+          "example": "NVIDIA"
+        },
+        "model": {
+          "type": "string",
+          "example": "RTX 3080"
+        },
+        "memory": {
+          "type": "string",
+          "example": "10 GB"
+        },
+        "memoryType": {
+          "type": "string",
+          "example": "GDDR6X"
+        },
+        "coreClock": {
+          "type": "string",
+          "example": "1.44 GHz"
+        },
+        "boostClock": {
+          "type": "string",
+          "example": "1.71 GHz"
+        },
+        "powerConsumption": {
+          "type": "number",
+          "example": 320
+        },
+        "priceUSD": {
+          "type": "number",
+          "example": 699.99
+        },
+        "availability": {
+          "type": "boolean",
+          "example": true
+        },
+        "ports": {
+          "type": "array",
+          "example": [
+            "HDMI",
+            "DisplayPort"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "releaseDate": {
+          "type": "string",
+          "example": "2021-01-01"
+        },
+        "features": {
+          "type": "array",
+          "example": [
+            "Ray Tracing",
+            "DLSS"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

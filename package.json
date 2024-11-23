@@ -1,0 +1,36 @@
+{
+  "name": "cse341-personalproject",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "format": "prettier --write .",
+    "lint": "eslint . ",
+    "lint:fix": "eslint . --fix ",
+    "swagger": "node swagger.js"
+  },
+  "keywords": [],
+  "author": "Nelson Petro",
+  "license": "ISC",
+  "description": "Personal project for the CSE341 course at BYU-I (Weeks 3 and 4)",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongodb": "^6.11.0",
+    "swagger-ui-express": "^5.0.1",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "install": "^0.13.0",
+    "nodemon": "^3.1.7",
+    "npm": "^10.9.1",
+    "prettier": "^3.3.3",
+    "swagger": "^0.7.5",
+    "swagger-autogen": "^2.23.7"
+  }
+}
