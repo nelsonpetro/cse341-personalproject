@@ -8,7 +8,6 @@
   "host": "https://cse341-personalproject-kan5.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
