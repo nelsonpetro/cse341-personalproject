@@ -4,14 +4,14 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res) => {
   //#swagger.tags=['Graphic Cards']
   try {
-    const contacts = await mongodb
+    const cards = await mongodb
       .getDb()
       .db()
       .collection('graphics')
       .find()
       .toArray();
     res.setHeader('Content-Type', 'Application/json');
-    res.status(200).json(contacts);
+    res.status(200).json(cards);
   } catch (err) {
     res.status(400).json({ message: err.message || err.toString() });
   }
@@ -72,7 +72,7 @@ const createCard = async (req, res) => {
     ? res.status(204).send()
     : res
         .status(500)
-        .json(response.error || 'An error ocurred while creating the contact');
+        .json(response.error || 'An error ocurred while creating the Graphic Card in the database');
 };
 
 const updateCard = async (req, res) => {
@@ -128,7 +128,7 @@ const deleteCard = async (req, res) => {
     ? res.status(204).send()
     : res
         .status(500)
-        .json(response.error || 'An error ocurred while deleting the contact');
+        .json(response.error || 'An error ocurred while deleting the Graphin Card from the database');
 };
 
 module.exports = {
