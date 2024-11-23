@@ -5,7 +5,7 @@
     "description": "Graphic Cards API - Week 3/4 Personal Activity",
     "version": "1.0.0"
   },
-  "host": "https://cse341-personalproject-kan5.onrender.com/",
+  "host": "https://cse341-personalproject-kan5.onrender.com",
   "basePath": "/",
   "schemes": [
     "http",
