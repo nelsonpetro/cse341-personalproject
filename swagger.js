@@ -6,7 +6,7 @@ const doc = {
     description: 'Graphic Cards API - Week 3/4 Personal Activity'
   },
   host: 'localhost:3000',
-  schemes: ['http', 'https'],
+  schemes: ['https'],
   definitions: {
     graphicCards: {
       brand: "NVIDIA",
