@@ -5,8 +5,8 @@ const doc = {
     title: 'Graphic Cards API - CSE341',
     description: 'Graphic Cards API - Week 3/4 Personal Activity'
   },
-  host: 'localhost:3000',
-  schemes: ['http','https'],
+  host: 'cse341-personalproject-kan5.onrender.com',
+  schemes: ['https','http'],
   definitions: {
     graphicCards: {
       brand: "NVIDIA",
