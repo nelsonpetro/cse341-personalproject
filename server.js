@@ -2,6 +2,7 @@ const express = require('express');
 const mongodb = require('./db/database');
 const passport = require('passport');
 const session = require('express-session');
+const MemoryStore = require('memorystore')(session)
 const githubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
@@ -13,7 +14,11 @@ app
   .use(session({
     secret: "secret",
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000
+    }),
   }))
   .use(passport.initialize())
   .use(passport.session())
